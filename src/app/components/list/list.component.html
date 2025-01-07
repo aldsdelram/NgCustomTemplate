@@ -1,0 +1,14 @@
+<div class="list">
+  @for(data of dataset; track data.id){
+  <div class="list--item">
+    <span>{{ data.header }}</span>
+    <br />
+    @if(listItemTemplate){ template:
+    <ng-template
+      [ngTemplateOutlet]="listItemTemplate"
+      [ngTemplateOutletContext]="{ $implicit: data }"
+    ></ng-template>
+    }
+  </div>
+  }
+</div>
